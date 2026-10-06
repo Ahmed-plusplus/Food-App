@@ -7,6 +7,65 @@ class Assets {
   Assets._();
 
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
+}
+
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  final AssetGenImage loginImage = const AssetGenImage(
+    'assets/images/login_image.png',
+  );
+}
+
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  final SvgGenImage addIcon = const SvgGenImage('assets/icons/add_icon.svg');
+  final SvgGenImage appIcon = const SvgGenImage('assets/icons/app_icon.svg');
+  final SvgGenImage correctIcon = const SvgGenImage(
+    'assets/icons/correct_icon.svg',
+  );
+  final SvgGenImage darkModeIcon = const SvgGenImage(
+    'assets/icons/dark_mode_icon.svg',
+  );
+  final SvgGenImage editIcon = const SvgGenImage('assets/icons/edit_icon.svg');
+  final SvgGenImage emailIcon = const SvgGenImage(
+    'assets/icons/email_icon.svg',
+  );
+  final SvgGenImage favIcon = const SvgGenImage('assets/icons/fav_icon.svg');
+  final SvgGenImage faveOutlineIcon = const SvgGenImage(
+    'assets/icons/fave_outline_icon.svg',
+  );
+  final SvgGenImage fireIcon = const SvgGenImage('assets/icons/fire_icon.svg');
+  final SvgGenImage helpIcon = const SvgGenImage('assets/icons/help_icon.svg');
+  final SvgGenImage homeIcon = const SvgGenImage('assets/icons/home_icon.svg');
+  final SvgGenImage langIcon = const SvgGenImage('assets/icons/lang_icon.svg');
+  final SvgGenImage logoutIcon = const SvgGenImage(
+    'assets/icons/logout_icon.svg',
+  );
+  final SvgGenImage notificationIcon = const SvgGenImage(
+    'assets/icons/notification_icon.svg',
+  );
+  final SvgGenImage passwordIcon = const SvgGenImage(
+    'assets/icons/password_icon.svg',
+  );
+  final SvgGenImage privacyIcon = const SvgGenImage(
+    'assets/icons/privacy_icon.svg',
+  );
+  final SvgGenImage profileIcon = const SvgGenImage(
+    'assets/icons/profile_icon.svg',
+  );
+  final SvgGenImage searchIcon = const SvgGenImage(
+    'assets/icons/search_icon.svg',
+  );
+  final SvgGenImage sizeIcon = const SvgGenImage('assets/icons/size_icon.svg');
+  final SvgGenImage splashIcon = const SvgGenImage(
+    'assets/icons/splash_icon.svg',
+  );
+  final SvgGenImage termIcon = const SvgGenImage('assets/icons/term_icon.svg');
+  final SvgGenImage timeIcon = const SvgGenImage('assets/icons/time_icon.svg');
 }
 
 class $AssetsFontsGen {
@@ -78,6 +137,67 @@ class AssetGenImage {
 
   ImageProvider provider({AssetBundle? bundle, String? package}) {
     return AssetImage(_assetName, bundle: bundle, package: package);
+  }
+
+  Widget custom({
+    Key? key,
+    required Widget Function(BuildContext context, String assetPath) builder,
+  }) {
+    return Builder(
+      key: key,
+      builder: (context) => builder(context, _assetName),
+    );
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
+}
+
+class SvgGenImage {
+  const SvgGenImage(this._assetName);
+
+  final String _assetName;
+
+  SvgPicture svg({
+    Key? key,
+    bool matchTextDirection = false,
+    AssetBundle? bundle,
+    String? package,
+    double? width,
+    double? height,
+    BoxFit fit = BoxFit.contain,
+    AlignmentGeometry alignment = Alignment.center,
+    bool allowDrawingOutsideViewBox = false,
+    WidgetBuilder? placeholderBuilder,
+    String? semanticsLabel,
+    bool excludeFromSemantics = false,
+    SvgTheme? theme,
+    Clip clipBehavior = Clip.hardEdge,
+    Color? color,
+    BlendMode colorBlendMode = BlendMode.srcIn,
+    bool cacheColorFilter = false,
+  }) {
+    return SvgPicture.asset(
+      _assetName,
+      key: key,
+      matchTextDirection: matchTextDirection,
+      bundle: bundle,
+      package: package,
+      width: width,
+      height: height,
+      fit: fit,
+      alignment: alignment,
+      allowDrawingOutsideViewBox: allowDrawingOutsideViewBox,
+      placeholderBuilder: placeholderBuilder,
+      semanticsLabel: semanticsLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      theme: theme,
+      color: color,
+      colorBlendMode: colorBlendMode,
+      clipBehavior: clipBehavior,
+      cacheColorFilter: cacheColorFilter,
+    );
   }
 
   Widget custom({
