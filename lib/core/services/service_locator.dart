@@ -1,9 +1,12 @@
+import 'package:food_app/core/network/supabase/supabase_services.dart';
+import 'package:food_app/features/auth/data/repository/auth_repository.dart';
 import 'package:get_it/get_it.dart';
 
-GetIt getIt = GetIt.instance;
+final getIt = GetIt.instance;
 
 void setupServiceLocator() {
-  // Register your services here
-  // Example:
-  // getIt.registerSingleton<YourService>(YourServiceImplementation());
+  getIt.registerSingleton<SupabaseServices>(SupabaseServices());
+  final supabase = getIt<SupabaseServices>();
+  getIt.registerSingleton<AuthRepository>(AuthRepositoryImpl(supabase: supabase));
+
 }
