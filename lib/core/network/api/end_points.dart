@@ -1,0 +1,71 @@
+abstract class EndPoint {
+  static String baseUrl = "https://www.themealdb.com/api/json/v1/1/";
+  static String categories = "categories.php";
+  static String filter = "filter.php";
+  static String lookup = "lookup.php";
+
+}
+
+abstract class ApiKey {
+  static String categories = "categories";
+  static String idCategory = "idCategory";
+  static String strCategory = "strCategory";
+  static String strCategoryThumb = "strCategoryThumb";
+  static String strCategoryDescription = "strCategoryDescription";
+  static String meals = "meals";
+  static String strMeal = "strMeal";
+  static String strMealThumb = "strMealThumb";
+  static String idMeal = "idMeal";
+  static String strArea = "strArea";
+  static String strCountry = "strCountry";
+  static String strMealAlternate = "strMealAlternate";
+  static String strInstructions = "strInstructions";
+  static String strTags = "strTags";
+  static String strYoutube = "strYoutube";
+  static String strIngredient1 = "strIngredient1";
+  static String strIngredient2 = "strIngredient2";
+  static String strIngredient3 = "strIngredient3";
+  static String strIngredient4 = "strIngredient4";
+  static String strIngredient5 = "strIngredient5";
+  static String strIngredient6 = "strIngredient6";
+  static String strIngredient7 = "strIngredient7";
+  static String strIngredient8 = "strIngredient8";
+  static String strIngredient9 = "strIngredient9";
+  static String strIngredient10 = "strIngredient10";
+  static String strIngredient11 = "strIngredient11";
+  static String strIngredient12 = "strIngredient12";
+  static String strIngredient13 = "strIngredient13";
+  static String strIngredient14 = "strIngredient14";
+  static String strIngredient15 = "strIngredient15";
+  static String strIngredient16 = "strIngredient16";
+  static String strIngredient17 = "strIngredient17";
+  static String strIngredient18 = "strIngredient18";
+  static String strIngredient19 = "strIngredient19";
+  static String strIngredient20 = "strIngredient20";
+  static String strMeasure1 = "strMeasure1";
+  static String strMeasure2 = "strMeasure2";
+  static String strMeasure3 = "strMeasure3";
+  static String strMeasure4 = "strMeasure4";
+  static String strMeasure5 = "strMeasure5";
+  static String strMeasure6 = "strMeasure6";
+  static String strMeasure7 = "strMeasure7";
+  static String strMeasure8 = "strMeasure8";
+  static String strMeasure9 = "strMeasure9";
+  static String strMeasure10 = "strMeasure10";
+  static String strMeasure11 = "strMeasure11";
+  static String strMeasure12 = "strMeasure12";
+  static String strMeasure13 = "strMeasure13";
+  static String strMeasure14 = "strMeasure14";
+  static String strMeasure15 = "strMeasure15";
+  static String strMeasure16 = "strMeasure16";
+  static String strMeasure17 = "strMeasure17";
+  static String strMeasure18 = "strMeasure18";
+  static String strMeasure19 = "strMeasure19";
+  static String strMeasure20 = "strMeasure20";
+  static String strSource = "strSource";
+  static String strImageSource = "strImageSource";
+  static String strCreativeCommonsConfirmed = "strCreativeCommonsConfirmed";
+  static String dateModified = "dateModified";
+  static String message = "message";
+  static String error = "error";
+}
