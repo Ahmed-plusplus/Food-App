@@ -66,9 +66,22 @@ class _LoginViewState extends State<LoginView> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: BlocConsumer<LoginCubit, LoginStates>(
+                    listenWhen: (context, state) => state.status == LoginStatus.success || state.status == LoginStatus.failure,
                     listener: (context, state){
-
+                      if(state.status == LoginStatus.success){
+                        context.go(AppRoutes.home);
+                      } else if(state.status == LoginStatus.failure){
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(state.errorMessage ?? 'Failed to login'),
+                            backgroundColor: Colors.redAccent,
+                          ),
+                        );
+                      }
                     },
+                    buildWhen: (context, state) => state.status == LoginStatus.initial
+                      || state.status == LoginStatus.loading
+                      || state.status == LoginStatus.failure,
                     builder: (context, state) {
                       _cubit = context.read<LoginCubit>();
                       return Center(
@@ -92,7 +105,7 @@ class _LoginViewState extends State<LoginView> {
                               ),
                               SizedBox(height: 24,),
                               CustomElevatedButton(
-                                onPressed: () => _cubit.login(),
+                                onPressed: () async => await _cubit.login(),
                                 text: AppStrings.signIn,
                                 isEnabled: state.status != LoginStatus.loading,
                               ),

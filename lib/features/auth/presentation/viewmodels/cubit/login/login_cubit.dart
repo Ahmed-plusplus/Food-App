@@ -9,10 +9,20 @@ class LoginCubit extends Cubit<LoginStates>{
 
   LoginCubit(this._repository) : super(LoginStates(LoginStatus.initial));
 
-  void changeEmail(String email) {}
+  void changeEmail(String email) {
+    emit(state.copyWith(LoginStatus.changeEmail, email: email));
+  }
 
-  void changePassword(String password) {}
+  void changePassword(String password) {
+    emit(state.copyWith(LoginStatus.changePassword, password: password));
+  }
 
-  void login() {}
+  Future<void> login() async {
+    emit(state.copyWith(LoginStatus.loading));
+    final response = await _repository.login(state.email, state.password);
+    response.fold(
+        (error) => emit(state.copyWith(LoginStatus.failure, errorMessage: error.errMessage)),
+        (success) => emit(state.copyWith(LoginStatus.success)));
+  }
 
 }
