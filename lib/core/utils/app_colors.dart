@@ -8,11 +8,12 @@ abstract class AppColors {
   static const title = Color(0xFF0F172A);
   static const subtitle = Color(0xFF64748B);
   static const body = Color(0xFF475569);
-  static const textFieldBorderColor = Color(0xFFE2E8F0);
+  static const borderColor = Color(0xFFE2E8F0);
   static const cardBorderColor = Color(0xFFF8FAFC);
   static const accountColor = Color(0xFF334155);
   static const badgeBackgroundColor = Color(0xFFF1F5F9);
   static const logoutColor = Color(0xFFDC2626);
 
   static const white = Colors.white;
+  static const white10 = Colors.white10;
 }
